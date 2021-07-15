@@ -40,6 +40,7 @@
   text-align: center;
 }
 .keyboard {
+  display: flex;
   color: #333;
 }
 .keyboard > span + span {
@@ -56,6 +57,7 @@
 .keyboard kbd {
   font-size: 18px;
   min-width: 45px;
+  min-height: 23px;
   font-weight: bold;
   display: inline-block;
   background: #eff0f2;
