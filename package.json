@@ -1,0 +1,61 @@
+{
+  "name": "keycode-info",
+  "homepage": "https://uiwjs.github.io/keycode-info",
+  "version": "1.0.0",
+  "description": "A simple web page that responds to the pressed key and returns information about the JavaScript'on-key press' key.",
+  "private": true,
+  "scripts": {
+    "start": "kkt start",
+    "build": "kkt build",
+    "test": "kkt test --env=jsdom",
+    "test:coverage": "kkt test --env=jsdom --coverage",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kktjs/kkt.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@uiw/react-copy-to-clipboard": "4.9.1",
+    "@uiw/react-github-corners": "1.4.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-json-view": "1.21.3"
+  },
+  "devDependencies": {
+    "@kkt/less-modules": "6.10.4",
+    "@types/jest": "26.0.23",
+    "@types/react": "17.0.11",
+    "@types/react-dom": "17.0.8",
+    "kkt": "6.10.4",
+    "prettier": "2.3.2"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/src/**/*.test.{ts,tsx}"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/app/*.{tsx,ts}"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
