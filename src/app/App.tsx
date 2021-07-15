@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import ReactJson from 'react-json-view';
 import CopyToClipboard from '@uiw/react-copy-to-clipboard';
+import GitHubCorners from '@uiw/react-github-corners';
 import './App.css';
 
 type Writeable<T> = { -readonly [P in keyof T]: T[P] };
@@ -67,6 +68,7 @@ const App = () => {
   }, []);
   return (
     <div className="App">
+      <GitHubCorners fixed size={56} target="_blank" href="https://github.com/uiwjs/keycode-info" />
       {copied && <div className="copied-info">copied</div>}
       <header className="App-header">
         {!data && <div className="help">Press any key to get the JavaScript event keycode</div>}

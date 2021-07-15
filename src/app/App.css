@@ -50,6 +50,7 @@
   background: #03a132;
 }
 .keyboard kbd {
+  font-weight: bold;
   display: inline-block;
   background: #eff0f2;
   border-radius: 3px;
