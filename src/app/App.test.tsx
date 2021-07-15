@@ -9,9 +9,12 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('MDEditor commands code `ctrlcmd+j`', async () => {
+it('App Click!`', async () => {
   const { getByTitle } = render(<App />);
-  // const input = getByTitle('test');
   fireEvent.keyDown(document, { key: 'J', code: 'KeyJ', ctrlKey: true, shiftKey: true });
-  // expect(handleChange).toHaveReturnedWith('```\nHello\n```');
+  const input = getByTitle('event.keyCode');
+  expect(input.className).toEqual('deprecated');
+  fireEvent.click(input);
+  fireEvent.click(input);
+  expect(input.parentElement!.className).toEqual('w-copy-to-clipboard copied');
 });

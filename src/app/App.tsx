@@ -53,7 +53,6 @@ const App = () => {
     event.preventDefault();
     const target = event.target as HTMLSpanElement;
     target.parentElement!.classList.add('copied');
-    console.log(event)
     if (timer) clearTimeout(timer);
     setCopied(true);
     timer = setTimeout(() => {
