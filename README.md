@@ -1,6 +1,6 @@
 [`Keycode Info`](https://uiwjs.github.io/keycode-info)
 
-JavaScript Keycodes of KeyboardEvent
+JavaScript Keycodes of [KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
 
 https://uiwjs.github.io/keycode-info
 
