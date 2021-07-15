@@ -6,4 +6,4 @@ JavaScript Keycodes of [KeyboardEvent](https://developer.mozilla.org/en-US/docs/
 
 https://uiwjs.github.io/keycode-info
 
-A simple web page that responds to the pressed key and returns information about the JavaScript'on-key press' key.
+A simple web page that responds to the pressed key and returns information about the JavaScript `on-key press` key.
