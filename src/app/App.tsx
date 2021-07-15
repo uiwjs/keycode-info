@@ -50,8 +50,10 @@ const App = () => {
   }
   let timer: NodeJS.Timeout;
   function handleClick(text: string, isCopy: boolean, event: React.MouseEvent<HTMLSpanElement, MouseEvent>) {
+    event.preventDefault();
     const target = event.target as HTMLSpanElement;
     target.parentElement!.classList.add('copied');
+    console.log(event)
     if (timer) clearTimeout(timer);
     setCopied(true);
     timer = setTimeout(() => {
