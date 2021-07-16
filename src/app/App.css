@@ -72,7 +72,7 @@
 }
 
 .copied-info {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   background-color: #03a132;
