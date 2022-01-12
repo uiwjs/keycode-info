@@ -24,7 +24,7 @@ const App = () => {
       'metaKey',
       'repeat',
       'shiftKey',
-      'char',
+      // 'char',
       'charCode',
       'keyCode',
       // 'keyIdentifier',
