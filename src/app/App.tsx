@@ -6,7 +6,7 @@ import './App.css';
 
 type Writeable<T> = { -readonly [P in keyof T]: T[P] };
 
-type KeyboardEventType = Writeable<KeyboardEvent>
+type KeyboardEventType = Writeable<KeyboardEvent>;
 
 const App = () => {
   const [data, setData] = useState<KeyboardEventType>();
@@ -57,7 +57,7 @@ const App = () => {
     setCopied(true);
     timer = setTimeout(() => {
       setCopied(false);
-      target.parentElement!.classList.remove('copied')
+      target.parentElement!.classList.remove('copied');
       clearTimeout(timer);
     }, 1000);
   }
