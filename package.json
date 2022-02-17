@@ -1,7 +1,7 @@
 {
   "name": "keycode-info",
   "homepage": "https://uiwjs.github.io/keycode-info",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple web page that responds to the pressed key and returns information about the JavaScript'on-key press' key.",
   "private": true,
   "scripts": {
@@ -19,19 +19,19 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@uiw/react-copy-to-clipboard": "4.9.7",
+    "@uiw/react-copy-to-clipboard": "4.11.3",
     "@uiw/react-github-corners": "1.5.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-json-view": "1.21.3"
   },
   "devDependencies": {
-    "@kkt/less-modules": "7.0.5",
-    "@types/react": "17.0.38",
+    "@kkt/less-modules": "7.1.0",
+    "@types/react": "17.0.39",
     "@types/react-dom": "17.0.11",
     "husky": "7.0.4",
-    "kkt": "7.0.5",
-    "lint-staged": "12.1.7",
+    "kkt": "7.1.0",
+    "lint-staged": "12.3.4",
     "prettier": "2.5.1"
   },
   "lint-staged": {
