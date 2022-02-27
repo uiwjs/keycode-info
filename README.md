@@ -1,6 +1,8 @@
 [`Keycode Info`](https://uiwjs.github.io/keycode-info)
 
-[![Coverage Status](https://coveralls.io/repos/github/uiwjs/keycode-info/badge.svg?branch=main)](https://coveralls.io/github/uiwjs/keycode-info?branch=main)
+[![CI](https://github.com/uiwjs/keycode-info/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/keycode-info/actions/workflows/ci.yml)
+[![Coverage Badge](https://uiwjs.github.io/keycode-info/badges.svg)](https://uiwjs.github.io/keycode-info/lcov-report/)
+[![Open in Gitpod](https://shields.io/badge/Open%20in-Gitpod-green?logo=Gitpod)](https://gitpod.io/#https://github.com/uiwjs/keycode-info)
 
 JavaScript Keycodes of [KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
 
