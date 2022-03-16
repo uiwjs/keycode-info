@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import ReactJson from 'react-json-view';
 import CopyToClipboard from '@uiw/react-copy-to-clipboard';
 import GitHubCorners from '@uiw/react-github-corners';
+import '@wcj/dark-mode';
 import './App.css';
 
 type Writeable<T> = { -readonly [P in keyof T]: T[P] };
@@ -11,6 +12,7 @@ type KeyboardEventType = Writeable<KeyboardEvent>;
 const App = () => {
   const [data, setData] = useState<KeyboardEventType>();
   const [copied, setCopied] = useState(false);
+  const [theme, setTheme] = useState<'rjv-default' | 'ocean'>('ocean');
   function keypressHandle(evn: KeyboardEvent) {
     evn.preventDefault();
     const protoKeys: (keyof KeyboardEventType)[] = [
@@ -62,6 +64,10 @@ const App = () => {
     }, 1000);
   }
   useEffect(() => {
+    document.addEventListener('colorschemechange', (evn) => {
+      setTheme(evn.detail.colorScheme === 'dark' ? 'ocean' : 'rjv-default');
+    });
+    setTheme(document.documentElement.dataset.colorMode === 'dark' ? 'ocean' : 'rjv-default');
     document.addEventListener('keydown', keypressHandle);
     return () => {
       document.removeEventListener('keydown', keypressHandle);
@@ -69,6 +75,7 @@ const App = () => {
   }, []);
   return (
     <div className="App">
+      <dark-mode permanent light="Dart" dark="Light" style={{ position: 'fixed', top: '6px', left: '10px' }}></dark-mode>
       <GitHubCorners fixed size={56} target="_blank" href="https://github.com/uiwjs/keycode-info" />
       {copied && <div className="copied-info">copied</div>}
       <header className="App-header">
@@ -98,7 +105,7 @@ const App = () => {
               </CopyToClipboard>
             </div>
             <div className="json-view">
-              <ReactJson src={data} theme="ocean" />
+              <ReactJson src={data} theme={theme} />
             </div>
           </Fragment>
         )}
