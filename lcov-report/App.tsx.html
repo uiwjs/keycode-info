@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">82.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/24</span>
+                <span class='fraction'>23/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>8/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.95% </span>
+                <span class="strong">85.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/23</span>
+                <span class='fraction'>23/27</span>
             </div>
         
             
@@ -173,7 +173,15 @@
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
 <a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,8 +192,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -236,13 +245,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -287,6 +301,7 @@
 import ReactJson from 'react-json-view';
 import CopyToClipboard from '@uiw/react-copy-to-clipboard';
 import GitHubCorners from '@uiw/react-github-corners';
+import '@wcj/dark-mode';
 import './App.css';
 &nbsp;
 type Writeable&lt;T&gt; = { -readonly [P in keyof T]: T[P] };
@@ -296,6 +311,7 @@ type KeyboardEventType = Writeable&lt;KeyboardEvent&gt;;
 const App = () =&gt; {
   const [data, setData] = useState&lt;KeyboardEventType&gt;();
   const [copied, setCopied] = useState(false);
+  const [theme, setTheme] = useState&lt;'rjv-default' | 'ocean'&gt;('ocean');
   function keypressHandle(evn: KeyboardEvent) {
     evn.preventDefault();
     const protoKeys: (keyof KeyboardEventType)[] = [
@@ -347,6 +363,10 @@ const App = () =&gt; {
     }, 1000);
   }
   useEffect(() =&gt; {
+    document.addEventListener('colorschemechange', <span class="fstat-no" title="function not covered" >(e</span>vn) =&gt; {
+<span class="cstat-no" title="statement not covered" >      setTheme(evn.detail.colorScheme === 'dark' ? 'ocean' : 'rjv-default');</span>
+    });
+    setTheme(document.documentElement.dataset.colorMode === 'dark' ? <span class="branch-0 cbranch-no" title="branch not covered" >'ocean' </span>: 'rjv-default');
     document.addEventListener('keydown', keypressHandle);
     return () =&gt; {
       document.removeEventListener('keydown', keypressHandle);
@@ -354,6 +374,7 @@ const App = () =&gt; {
   }, []);
   return (
     &lt;div className="App"&gt;
+      &lt;dark-mode permanent light="Dart" dark="Light" style={{ position: 'fixed', top: '6px', left: '10px' }}&gt;&lt;/dark-mode&gt;
       &lt;GitHubCorners fixed size={56} target="_blank" href="https://github.com/uiwjs/keycode-info" /&gt;
       {copied &amp;&amp; &lt;div className="copied-info"&gt;copied&lt;/div&gt;}
       &lt;header className="App-header"&gt;
@@ -383,7 +404,7 @@ const App = () =&gt; {
               &lt;/CopyToClipboard&gt;
             &lt;/div&gt;
             &lt;div className="json-view"&gt;
-              &lt;ReactJson src={data} theme="ocean" /&gt;
+              &lt;ReactJson src={data} theme={theme} /&gt;
             &lt;/div&gt;
           &lt;/Fragment&gt;
         )}
@@ -400,7 +421,7 @@ export default App;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Mar 16 2022 17:28:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Mar 16 2022 18:55:40 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="prettify.js"></script>
         <script>
