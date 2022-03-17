@@ -75,7 +75,7 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <dark-mode permanent light="Dart" dark="Light" style={{ position: 'fixed', top: '6px', left: '10px' }}></dark-mode>
+      <dark-mode permanent light="Light" dark="Dart" style={{ position: 'fixed', top: '6px', left: '10px' }}></dark-mode>
       <GitHubCorners fixed size={56} target="_blank" href="https://github.com/uiwjs/keycode-info" />
       {copied && <div className="copied-info">copied</div>}
       <header className="App-header">
