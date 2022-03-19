@@ -3,7 +3,7 @@
 }
 
 [data-color-mode*='dark'], [data-color-mode*='dark'] body {
-  --color-thme-bg: #282c34 !important;
+  --color-theme-bg: #282c34 !important;
   --color-json-bg: #2c303b;
 }
 [data-color-mode*='light'], [data-color-mode*='light'] body {
@@ -20,7 +20,7 @@
 
 .help, .json-view {
   display: inline-block;
-  color: var(--color-thme-text);
+  color: var(--color-theme-text);
   text-decoration: none;
   text-align: center;
   margin: 20px auto;
@@ -66,8 +66,8 @@
   font-weight: bold;
   display: inline-block;
   background: #eff0f2;
-  background: var(--color-thme-text);
-  color: var(--color-thme-bg);
+  background: var(--color-theme-text);
+  color: var(--color-theme-bg);
   border-radius: 3px;
   padding: 5px 10px;
   border-top: 1px solid #f5f5f5;
