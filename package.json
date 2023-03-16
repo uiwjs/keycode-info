@@ -22,14 +22,14 @@
     "@uiw/react-copy-to-clipboard": "~4.12.2",
     "@uiw/react-github-corners": "~1.5.3",
     "@wcj/dark-mode": "~1.0.13",
-    "react": "~17.0.2",
-    "react-dom": "~17.0.2",
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0",
     "react-json-view": "~1.21.3"
   },
   "devDependencies": {
     "@kkt/less-modules": "~7.1.1",
-    "@types/react": "~17.0.39",
-    "@types/react-dom": "~17.0.11",
+    "@types/react": "~18.0.0",
+    "@types/react-dom": "~18.0.0",
     "husky": "~7.0.4",
     "kkt": "~7.1.5",
     "lint-staged": "~12.3.4",
