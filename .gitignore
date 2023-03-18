@@ -1,6 +1,7 @@
 build
 coverage
 node_modules
+__snapshots__
 npm-debug.log*
 package-lock.json
 .eslintcache

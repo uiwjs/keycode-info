@@ -9,7 +9,7 @@
     "start": "kkt start",
     "build": "kkt build",
     "test": "kkt test --env=jsdom",
-    "test:coverage": "kkt test --env=jsdom --coverage --bail",
+    "coverage": "kkt test --env=jsdom --coverage --bail",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
   "repository": {
@@ -50,6 +50,9 @@
     ],
     "collectCoverageFrom": [
       "<rootDir>/src/app/*.{tsx,ts}"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/?!(.*)"
     ]
   },
   "eslintConfig": {

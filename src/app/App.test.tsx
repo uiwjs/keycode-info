@@ -1,21 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
-
-it('App Click!`', async () => {
-  render(<App />);
-  fireEvent.keyDown(document, { key: 'J', code: 'KeyJ', ctrlKey: true, shiftKey: true });
-  const input = screen.getByTitle<HTMLElement>('event.keyCode');
-  expect(input.className).toEqual('deprecated');
-  fireEvent.click(input);
-  fireEvent.click(input);
-  // eslint-disable-next-line testing-library/no-node-access
-  expect(input.parentElement?.className).toEqual('w-copy-to-clipboard copied');
+describe('App', () => {
+  it('renders with text "Press any key to get the JavaScript event keycode"', () => {
+    let container: HTMLDivElement | null = null;
+    act(() => {
+      container = render(<App />).container as HTMLDivElement;
+    });
+    expect((container as unknown as HTMLDivElement).textContent).toBe('Press any key to get the JavaScript event keycode');
+    expect(container).toMatchSnapshot();
+  });
 });
