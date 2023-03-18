@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import ReactJson from 'react-json-view';
+import { JsonViewer } from '@textea/json-viewer';
 import CopyToClipboard from '@uiw/react-copy-to-clipboard';
 import GitHubCorners from '@uiw/react-github-corners';
 import '@wcj/dark-mode';
@@ -12,7 +12,7 @@ type KeyboardEventType = Writeable<KeyboardEvent>;
 const App = () => {
   const [data, setData] = useState<KeyboardEventType>();
   const [copied, setCopied] = useState(false);
-  const [theme, setTheme] = useState<'rjv-default' | 'ocean'>('ocean');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   function keypressHandle(evn: KeyboardEvent) {
     evn.preventDefault();
     const protoKeys: (keyof KeyboardEventType)[] = [
@@ -65,9 +65,9 @@ const App = () => {
   }
   useEffect(() => {
     document.addEventListener('colorschemechange', (evn) => {
-      setTheme(evn.detail.colorScheme === 'dark' ? 'ocean' : 'rjv-default');
+      setTheme(evn.detail.colorScheme === 'dark' ? 'dark' : 'light');
     });
-    setTheme(document.documentElement.dataset.colorMode === 'dark' ? 'ocean' : 'rjv-default');
+    setTheme(document.documentElement.dataset.colorMode === 'dark' ? 'dark' : 'light');
     document.addEventListener('keydown', keypressHandle);
     return () => {
       document.removeEventListener('keydown', keypressHandle);
@@ -105,7 +105,7 @@ const App = () => {
               </CopyToClipboard>
             </div>
             <div className="json-view">
-              <ReactJson src={data} theme={theme} />
+              <JsonViewer value={data} theme={theme} />
             </div>
           </Fragment>
         )}
