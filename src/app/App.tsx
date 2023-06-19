@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { JsonViewer } from '@textea/json-viewer';
+import JsonViewer from '@uiw/react-json-view';
+import { darkTheme } from '@uiw/react-json-view/dark';
+import { lightTheme } from '@uiw/react-json-view/light';
 import CopyToClipboard from '@uiw/react-copy-to-clipboard';
 import GitHubCorners from '@uiw/react-github-corners';
 import '@wcj/dark-mode';
@@ -73,6 +75,7 @@ const App = () => {
       document.removeEventListener('keydown', keypressHandle);
     };
   }, []);
+  const style = (theme === 'dark' ? darkTheme : lightTheme) as React.CSSProperties;
   return (
     <div className="App">
       <dark-mode permanent light="Light" dark="Dart" style={{ position: 'fixed', top: '6px', left: '10px' }}></dark-mode>
@@ -105,7 +108,7 @@ const App = () => {
               </CopyToClipboard>
             </div>
             <div className="json-view">
-              <JsonViewer value={data} theme={theme} />
+              <JsonViewer value={data} style={{ ...style, '--w-rjv-background-color': 'transparent' } as React.CSSProperties} />
             </div>
           </Fragment>
         )}
