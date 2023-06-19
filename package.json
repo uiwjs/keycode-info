@@ -1,15 +1,15 @@
 {
   "name": "keycode-info",
   "homepage": "https://uiwjs.github.io/keycode-info",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A simple web page that responds to the pressed key and returns information about the JavaScript'on-key press' key.",
   "private": true,
   "scripts": {
     "prepare": "husky install",
     "start": "kkt start",
     "build": "kkt build",
-    "test": "kkt test --env=jsdom",
-    "coverage": "kkt test --env=jsdom --coverage --bail",
+    "test": "tsbb test --env=jsdom",
+    "coverage": "tsbb test --env=jsdom --coverage --bail",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
   "repository": {
@@ -18,9 +18,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@uiw/react-json-view": "^1.0.0",
     "@uiw/react-copy-to-clipboard": "^4.21.28",
     "@uiw/react-github-corners": "^1.5.15",
+    "@uiw/react-json-view": "^1.0.0",
     "@wcj/dark-mode": "^1.0.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -30,9 +30,11 @@
     "@types/react": "^18.2.13",
     "@types/react-dom": "^18.2.6",
     "husky": "^8.0.3",
+    "jest-environment-jsdom": "^29.5.0",
     "kkt": "7.5.1",
     "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "tsbb": "^4.1.12"
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts,less,md,json}": [
@@ -52,12 +54,6 @@
     ],
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/?!(.*)"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
     ]
   },
   "browserslist": {
