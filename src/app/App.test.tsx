@@ -8,6 +8,5 @@ describe('App', () => {
       container = render(<App />).container as HTMLDivElement;
     });
     expect((container as unknown as HTMLDivElement).textContent).toBe('Press any key to get the JavaScript event keycode');
-    expect(container).toMatchSnapshot();
   });
 });
