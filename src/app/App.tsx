@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import JsonViewer from '@uiw/react-json-view';
+import { type SemicolonProps } from '@uiw/react-json-view/esm/semicolon';
 import { darkTheme } from '@uiw/react-json-view/dark';
 import { lightTheme } from '@uiw/react-json-view/light';
 import CopyToClipboard from '@uiw/react-copy-to-clipboard';
@@ -54,7 +55,11 @@ const Keyboard = styled.div`
     border-radius: 3px;
     padding: 5px 10px;
     border-top: 1px solid #f5f5f5;
-    box-shadow: inset 0 0 25px #e8e8e8, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9, 0 2px 3px #333;
+    box-shadow:
+      inset 0 0 25px #e8e8e8,
+      0 1px 0 #c3c3c3,
+      0 2px 0 #c9c9c9,
+      0 2px 3px #333;
     text-shadow: 0px 1px 0px #f5f5f5;
     cursor: pointer;
     user-select: none;
@@ -95,6 +100,13 @@ const JsonView = styled.div`
 
 type Writeable<T> = { -readonly [P in keyof T]: T[P] };
 type KeyboardEventType = Writeable<KeyboardEvent>;
+
+const ObjectKey: SemicolonProps['render'] = ({ value, keyName, parentName, ...reset }) => {
+  if (/(keycode|charcode|which)/i.test(keyName?.toString() || '')) {
+    return <del {...reset} title={`"${keyName}" deprecated`} />;
+  }
+  return <span {...reset} />;
+};
 
 const App = () => {
   const [data, setData] = useState<KeyboardEventType>();
@@ -193,7 +205,13 @@ const App = () => {
               </CopyToClipboard>
             </Keyboard>
             <JsonView>
-              <JsonViewer value={data} style={{ ...style, '--w-rjv-background-color': 'transparent' } as React.CSSProperties} />
+              <JsonViewer
+                value={data}
+                components={{
+                  objectKey: ObjectKey,
+                }}
+                style={{ ...style, '--w-rjv-background-color': 'transparent' } as React.CSSProperties}
+              />
             </JsonView>
           </Fragment>
         )}
