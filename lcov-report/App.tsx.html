@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.21% </span>
+                <span class="strong">51.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/41</span>
+                <span class='fraction'>20/39</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.5% </span>
+                <span class="strong">52.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/40</span>
+                <span class='fraction'>20/38</span>
             </div>
         
             
@@ -281,13 +281,7 @@
 <a name='L216'></a><a href='#L216'>216</a>
 <a name='L217'></a><a href='#L217'>217</a>
 <a name='L218'></a><a href='#L218'>218</a>
-<a name='L219'></a><a href='#L219'>219</a>
-<a name='L220'></a><a href='#L220'>220</a>
-<a name='L221'></a><a href='#L221'>221</a>
-<a name='L222'></a><a href='#L222'>222</a>
-<a name='L223'></a><a href='#L223'>223</a>
-<a name='L224'></a><a href='#L224'>224</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L219'></a><a href='#L219'>219</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -311,6 +305,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -387,13 +382,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -496,6 +484,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -511,7 +501,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Fragment, useEffect, useState } from 'react';
 import JsonViewer from '@uiw/react-json-view';
-import { type SemicolonProps } from '@uiw/react-json-view/esm/semicolon';
 import { darkTheme } from '@uiw/react-json-view/dark';
 import { lightTheme } from '@uiw/react-json-view/light';
 import CopyToClipboard from '@uiw/react-copy-to-clipboard';
@@ -539,6 +528,7 @@ const Header = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 6rem;
 `;
 &nbsp;
 const Keyboard = styled.div`
@@ -611,13 +601,6 @@ const JsonView = styled.div`
 &nbsp;
 type Writeable&lt;T&gt; = { -readonly [P in keyof T]: T[P] };
 type KeyboardEventType = Writeable&lt;KeyboardEvent&gt;;
-&nbsp;
-const ObjectKey: SemicolonProps['render'] = <span class="fstat-no" title="function not covered" >({</span> value, keyName, parentName, ...reset }) =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (/(keycode|charcode|which)/i.test(keyName?.toString() || '')) {</span>
-<span class="cstat-no" title="statement not covered" >    return &lt;del {...reset} title={`"${keyName}" deprecated`} /&gt;;</span>
-  }
-<span class="cstat-no" title="statement not covered" >  return &lt;span {...reset} /&gt;;</span>
-};
 &nbsp;
 const App = () =&gt; {
   const [data, setData] = useState&lt;KeyboardEventType&gt;();
@@ -716,13 +699,15 @@ const App = () =&gt; {
               &lt;/CopyToClipboard&gt;
             &lt;/Keyboard&gt;
             &lt;JsonView&gt;
-              &lt;JsonViewer
-                value={data}
-                components={{
-                  objectKey: ObjectKey,
-                }}
-                style={{ ...style, '--w-rjv-background-color': 'transparent' } as React.CSSProperties}
-              /&gt;
+              &lt;JsonViewer value={data} style={{ ...style, '--w-rjv-background-color': 'transparent' } as React.CSSProperties}&gt;
+                &lt;JsonViewer.KeyName
+                  render={<span class="fstat-no" title="function not covered" >(p</span>rops, { value, keyName }) =&gt; {
+<span class="cstat-no" title="statement not covered" >                    if (/(keycode|charcode|which)/i.test(keyName?.toString() || '')) {</span>
+<span class="cstat-no" title="statement not covered" >                      return &lt;del {...props}&gt;{keyName}&lt;/del&gt;;</span>
+                    }
+                  }}
+                /&gt;
+              &lt;/JsonViewer&gt;
             &lt;/JsonView&gt;
           &lt;/Fragment&gt;
         )}
@@ -739,7 +724,7 @@ export default App;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-23T16:53:32.807Z
+                at 2023-09-23T17:13:22.934Z
             </div>
         <script src="prettify.js"></script>
         <script>
