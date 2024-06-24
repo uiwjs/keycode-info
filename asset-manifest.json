@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/keycode-info/static/css/main.87b857e2.css",
-    "main.js": "/keycode-info/static/js/main.59c7addd.js",
+    "main.js": "/keycode-info/static/js/main.0ef7c039.js",
     "index.html": "/keycode-info/index.html",
     "main.87b857e2.css.map": "/keycode-info/static/css/main.87b857e2.css.map",
-    "main.59c7addd.js.map": "/keycode-info/static/js/main.59c7addd.js.map"
+    "main.0ef7c039.js.map": "/keycode-info/static/js/main.0ef7c039.js.map"
   },
   "entrypoints": [
     "static/css/main.87b857e2.css",
-    "static/js/main.59c7addd.js"
+    "static/js/main.0ef7c039.js"
   ]
 }

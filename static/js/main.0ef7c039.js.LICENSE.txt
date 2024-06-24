@@ -38,11 +38,22 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/**
+ * @package @wcj/dark-mode
+ * Web Component that toggles dark mode 🌒
+ * Github: https://github.com/jaywcjlove/dark-mode.git
+ * Website: https://jaywcjlove.github.io/dark-mode
+ * 
+ * Licensed under the MIT license.
+ * @license Copyright © 2022. Licensed under the MIT License
+ * @author kenny wong <wowohoo@qq.com>
+ */
+
 /**! 
- * @uiw/copy-to-clipboard v1.0.15 
+ * @uiw/copy-to-clipboard v1.0.17 
  * Copy to clipboard. 
  * 
- * Copyright (c) 2023 Kenny Wang 
+ * Copyright (c) 2024 Kenny Wang 
  * https://github.com/uiwjs/copy-to-clipboard.git 
  * 
  * @website: https://uiwjs.github.io/copy-to-clipboard
