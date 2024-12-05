@@ -22,13 +22,13 @@
     "@uiw/react-github-corners": "^1.5.15",
     "@uiw/react-json-view": "^2.0.0-alpha.7",
     "@wcj/dark-mode": "^1.0.15",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "styled-components": "^6.0.7"
   },
   "devDependencies": {
-    "@types/react": "^18.2.13",
-    "@types/react-dom": "^18.2.6",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "husky": "^8.0.3",
     "jest-environment-jsdom": "^29.5.0",
     "kkt": "^7.5.2",
