@@ -1,5 +1,7 @@
 [`Keycode Info`](https://uiwjs.github.io/keycode-info)
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://jaywcjlove.github.io/#/sponsor)
+[![Follow On X](https://img.shields.io/badge/Follow%20on%20X-333333?logo=x&logoColor=white)](https://x.com/jaywcjlove)
 [![CI](https://github.com/uiwjs/keycode-info/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/keycode-info/actions/workflows/ci.yml)
 [![Coverage Badge](https://uiwjs.github.io/keycode-info/badges.svg)](https://uiwjs.github.io/keycode-info/lcov-report/)
 [![Open in Gitpod](https://shields.io/badge/Open%20in-Gitpod-green?logo=Gitpod)](https://gitpod.io/#https://github.com/uiwjs/keycode-info)
